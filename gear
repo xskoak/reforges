@@ -1,1 +1,223 @@
+priest="Shadowbonobo"
+level=110
+race=human
+region=eu
+server=silvermoon
+role=spell
+professions=alchemy=215/herbalism=52
+talents=1211111
+spec=shadow
+artifact=47:0:0:0:0:764:1:765:1:766:1:767:4:768:1:769:1:770:1:771:4:772:4:773:4:774:4:775:4:776:4:777:4:778:4:779:1:1347:1:1381:1:1573:4:1574:1:1575:1:1576:4:1650:1
 
+head=,id=138313,bonus_id=3516/1808/1487/3528,gem_id=130220
+neck=,id=133633,enchant_id=5439,bonus_id=3418/1808/1557/3337,gem_id=130220
+shoulder=,id=138322,bonus_id=3518/1522/3337
+back=,id=138370,enchant_id=5436,bonus_id=3518/1502/3528
+chest=,id=138319,bonus_id=3518/1502/3528
+shirt=,id=3427
+wrist=,id=137314,bonus_id=3418/1577/3337
+hands=,id=140888,bonus_id=3445/1507/3336
+waist=,id=132864,bonus_id=1811/3530
+legs=,id=134427,bonus_id=3418/1557/3337
+feet=,id=134308,bonus_id=3418/1567/3337
+finger1=,id=132452,enchant_id=5428,bonus_id=3459/3530,gem_id=130220
+finger2=,id=147767,enchant_id=5428,bonus_id=3572/1502/3337
+trinket1=,id=141482,bonus_id=3466/1477/3336
+trinket2=,id=140792,bonus_id=3445/1497/3528
+main_hand=,id=128827,bonus_id=740,relic_id=3418:1557:3337/3518:1502:3528/3418:1557:3337,gem_id=137377/140819/144464/0
+off_hand=,id=133958,relic_id=0/0,gem_id=0/0/0/0
+
+### Gear from Bags
+#
+# Cruel Combatant's Satin Hood (860)
+# head=,id=145172,bonus_id=3565/1680/1522/3528
+#
+# Hood of Uncanny Perspectives (890)
+# head=,id=142150,bonus_id=3418/1502/3528
+#
+# Pendant of the Stormforger (910)
+# neck=,id=133767,bonus_id=3418/1562/3337
+#
+# Understone Gorget (905)
+# neck=,id=134491,bonus_id=3418/1557/3337
+#
+# Master Thrasher's Lockcollar (890)
+# neck=,id=144479,bonus_id=3418/42/1542/3528
+#
+# Talisman of the Shal'dorei (890)
+# neck=,id=141325
+#
+# Chain of the Green Flight (890)
+# neck=,id=137311,bonus_id=3418/1542/3528
+#
+# Purifier's Mantle (875)
+# shoulder=,id=138322,bonus_id=3514/1472/3528
+#
+# Mother Shahraz's Seduction (940)
+# shoulder=,id=132437,bonus_id=1811/3530
+#
+# Spaulders of Forgotten Worlds (900)
+# shoulder=,id=147734,bonus_id=3572/1482/3528
+#
+# Vileweave Amice (895)
+# shoulder=,id=146791,bonus_id=3394/1557/3337
+#
+# Zeks Exterminatus (940)
+# back=,id=144438,enchant_id=5436,bonus_id=1811/3530
+#
+# Goldscar Pelt (905)
+# back=,id=133639,bonus_id=3418/1808/1557/3337
+#
+# Cloak of Temporal Recalibration (890)
+# back=,id=140910,bonus_id=3516/1487/3528
+#
+# Robes of Fluctuating Energy (900)
+# chest=,id=140848,bonus_id=3445/1808/1497/3528,gem_id=130220
+#
+# Night Dreamer Robe (890)
+# chest=,id=139089,bonus_id=3418/1808/41/1552/3528
+#
+# Robes of Wicked Modesty (905)
+# chest=,id=142147,bonus_id=3418/1522/3337
+#
+# Anund's Seared Shackles (940)
+# wrist=,id=132409,bonus_id=1811/3530
+#
+# Wristbands of Cursed Torment (900)
+# wrist=,id=137314,bonus_id=3418/1552/3336
+#
+# Sunfrost Wristwraps (890)
+# wrist=,id=139130,bonus_id=3418/1552/3528
+#
+# Gloves of the Mountain Conquest (890)
+# hands=,id=134420,bonus_id=3418/1542/3528
+#
+# Gloves of the Mountain Conquest (890)
+# hands=,id=134420,bonus_id=3418/1542/3528
+#
+# Purifier's Gloves (895)
+# hands=,id=138310,bonus_id=3516/1808/1492/3336,gem_id=130220
+#
+# Seawitch Gloves (905)
+# hands=,id=134261,bonus_id=3418/1567/3337
+#
+# Scorpid Handler's Gloves (885)
+# hands=,id=140888,bonus_id=3444/1482/3528
+#
+# Man'ari Skullbuckled Cinch (920)
+# waist=,id=140887,bonus_id=3518/1517/3337
+#
+# Cord of the Penitent (885)
+# waist=,id=142153,bonus_id=3415/1808/1502/3336,gem_id=130220
+#
+# Man'ari Skullbuckled Cinch (905)
+# waist=,id=140887,bonus_id=3518/1502/3528
+#
+# Leggings of Swirling Runes (890)
+# legs=,id=133610,bonus_id=3415/40/1542/3336
+#
+# Bonespeaker Leggings (895)
+# legs=,id=134218,bonus_id=3418/1557/3336
+#
+# Dia's Nightmarish Leggings (720)
+# legs=,id=124163,bonus_id=1799/1502
+#
+# Bonespeaker Leggings (900)
+# legs=,id=134218,bonus_id=3418/1562/3336
+#
+# Purifier's Leggings (890)
+# legs=,id=138316,bonus_id=3516/1487/3528
+#
+# Offal Galoshes (905)
+# feet=,id=134416,bonus_id=3416/1557/3337
+#
+# Manawracker Sandals (900)
+# feet=,id=134308,bonus_id=3418/1562/3336
+#
+# Mistbound Helarjar Footwraps (895)
+# feet=,id=133608,bonus_id=3418/1547/3336
+#
+# Outcast Wanderer's Footrags (895)
+# feet=,id=140914,bonus_id=3517/1808/1492/3528,gem_id=130220
+#
+# Outcast Wanderer's Footrags (895)
+# feet=,id=140914,bonus_id=3517/1492/3528
+#
+# Astonishingly Scarlet Slippers (890)
+# feet=,id=142298,bonus_id=3416/1507/3336
+#
+# Signet of the Highborne Magi (905)
+# finger1=,id=134537,bonus_id=3418/1557/3337
+#
+# Band of Callous Dominance (900)
+# finger1=,id=134528,bonus_id=3418/1808/1552/3336
+#
+# Vastly Oversized Ring (840)
+# finger1=,id=141580,bonus_id=1502/3528
+#
+# Ring of Braided Stems (915)
+# finger1=,id=140896,enchant_id=5428,bonus_id=3516/41/1512/3337
+#
+# Band of Fused Coral (890)
+# finger1=,id=134532,bonus_id=3418/1542/3528
+#
+# Grasping Tentacle Loop (905)
+# finger1=,id=133634,enchant_id=5428,bonus_id=3418/1557/3337
+#
+# The Twins' Painful Touch (940)
+# finger1=,id=133973,enchant_id=5428,bonus_id=3459/3530,gem_id=130220
+#
+# Band of Dark Millennia (905)
+# finger1=,id=147766,enchant_id=5428,bonus_id=3572/41/1487/3336
+#
+# Spellblade's Gemmed Signet (875)
+# finger1=,id=140895,bonus_id=3514/1472/3528
+#
+# Kil'jaeden's Burning Wish (940)
+# trinket1=,id=144259,bonus_id=3459/3530
+#
+# Flashfrozen Resin Globule (463)
+# trinket1=,id=144156,bonus_id=615,drop_level=110
+#
+# Star Gate (880)
+# trinket1=,id=140804,bonus_id=3573/1808/1477/3528
+#
+# Obelisk of the Void (900)
+# trinket1=,id=137433,bonus_id=3573/1552/3337
+#
+# Nightmare Bloom (895)
+# trinket1=,id=121311,bonus_id=3573/604/1557/3337
+#
+# Chrono Shard (890)
+# trinket1=,id=137419,bonus_id=3573/1542/3336
+#
+# Fury of the Burning Sky (905)
+# trinket1=,id=140801,bonus_id=3518/1808/1502/3528,gem_id=130220
+#
+# Pharamere's Forbidden Grimoire (905)
+# trinket1=,id=140800,bonus_id=3518/1502/3528
+#
+# Fury of the Burning Sky (905)
+# trinket1=,id=140801,bonus_id=3518/1502/3528
+#
+# Leycoral Shard (890)
+# trinket1=,id=134248,bonus_id=3573/605/1552/3336
+#
+# Nightborne Researcher's Phial (885)
+# trinket1=,id=134292,bonus_id=3573/605/1547/3336
+#
+# Erratic Metronome (895)
+# trinket1=,id=140792,bonus_id=3444/41/1492/3336
+#
+# Aran's Relaxing Ruby (890)
+# trinket1=,id=142157,bonus_id=3417/1502/3336
+#
+# Naraxas' Spiked Tongue (895)
+# trinket1=,id=137349,bonus_id=3418/1547/3336
+#
+# Whispers in the Dark (895)
+# trinket1=,id=140809,bonus_id=3517/1492/3528
+#
+# Pharamere's Forbidden Grimoire (905)
+# trinket1=,id=140800,bonus_id=3518/1502/3528
+#
