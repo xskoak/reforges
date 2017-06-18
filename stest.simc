@@ -109,7 +109,7 @@ actions.vf+=/mind_flay,chain=1,interrupt_immediate=1,interrupt_if=ticks>=2&(acti
 actions.vf+=/shadow_word_pain
 
 head=purifiers_gorget,id=138313,bonus_id=3516/1808/1487/3528,gems=150haste
-neck=wolfstride_pendant,id=133633,bonus_id=3418/1808/1557/3337,gems=150haste,enchant=mark_of_the_hidden_satyr
+neck=wolfstride_pendant,id=133633,bonus_id=3418/1808/1557/3337,gems=150haste,enchant=mark_of_the_hidden_satyr|neck=,id=144479,bonus_id=3418/42/1542/3528,enchant=mark_of_the_hidden_satyr
 shoulders=purifiers_mantle,id=138322,bonus_id=3518/1522/3337
 back=purifiers_drape,id=138370,bonus_id=3518/1502/3528,enchant=200int
 chest=purifiers_cassock,id=138319,bonus_id=3518/1502/3528

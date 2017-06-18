@@ -137,11 +137,10 @@ off_hand=secrets_of_the_void,id=133958
 # gear_armor=2021
 # set_bonus=tier19_2pc=1
 # set_bonus=tier19_4pc=1
-#reforge_plot_stat=crit,mastery,haste
-#reforge_plot_amount=7000
-#html=output.html
+reforge_plot_stat=crit,mastery,haste
+reforge_plot_amount=7000
+html=output.html
 iterations=25000
-#reforge_plot_step=659
-#reforge_plot_output_file=patchwerkreforge.csv
+reforge_plot_step=659
+reforge_plot_output_file=patchwerkreforge.csv
 html=shadowbonobo.html
-#fight_style=LightMovement
