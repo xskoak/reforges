@@ -7,7 +7,7 @@ race=human
 role=spell
 position=back
 professions=alchemy=215/herbalism=52
-talents=http://eu.battle.net/wow/en/tool/talent-calculator#Xb!0100120
+talents=http://eu.battle.net/wow/en/tool/talent-calculator#Xb!0100000
 artifact=47:0:0:0:0:764:1:765:1:766:1:767:4:768:1:769:1:770:1:771:4:772:4:773:4:774:4:775:4:776:4:777:4:778:4:779:1:1347:1:1381:1:1573:4:1574:1:1575:1:1576:4:1650:1
 
 # This default action priority list is automatically created based on your character.
@@ -137,11 +137,11 @@ off_hand=secrets_of_the_void,id=133958
 # gear_armor=2021
 # set_bonus=tier19_2pc=1
 # set_bonus=tier19_4pc=1
-#reforge_plot_stat=crit,mastery,haste
-#reforge_plot_amount=7000
-#html=output.html
+reforge_plot_stat=crit,mastery,haste
+reforge_plot_amount=5000
+html=output.html
 iterations=25000
-#reforge_plot_step=659
-#reforge_plot_output_file=patchwerkreforge.csv
+reforge_plot_step=1000
+reforge_plot_output_file=patchwerkreforge.csv
 html=shadowbonobo.html
-#fight_style=LightMovement
+fight_style=LightMovement
