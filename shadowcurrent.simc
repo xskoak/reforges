@@ -1,7 +1,7 @@
 armory=eu,silvermoon,shadowbonobo
 reforge_plot_stat=crit,mastery,haste,intellect,versatility
-reforge_plot_amount=2000
+reforge_plot_amount=5000
 html=output.html
 iterations=25000
-reforge_plot_step=1000
+reforge_plot_step=2000
 reforge_plot_output_file=patchwerkreforge.csv
