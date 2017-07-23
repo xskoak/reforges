@@ -14,7 +14,7 @@ def arg_parser():
                         help="Name of the relevant character")
     parser.add_argument("--file", dest="csvfile",
                         default="https://github.com/xskoak/reforges/raw/master/patchwerkreforge.csv",
-                        help="Can be an a CSV file or a CSV URL.")
+                        help="Can be a CSV file path or a CSV URL.")
     parser.add_argument("--class", dest="character_class", default="Priest",
                         help="Class of the relevant character. Default is Priest")
     parser.add_argument("--spec", dest="spec", default="Shadow",
@@ -67,9 +67,13 @@ def print_pawn(norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility)
             args.character_name, args.character_class, args.spec, (args.mainstat).title(), norm_main, norm_crit,
             norm_haste, norm_mastery, norm_versatility))
 
+
 if __name__ == '__main__':
     arg_parser()
+    #Read file data to string
     csv_object = data_parser(args.csvfile)
+    #Apply regex to string and load into dataframe
     csv_object = re_load(csv_object)
+    #Apply linear regression and interpolation to the 1,2 range
     norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility = regress_normalize(csv_object)
     print_pawn(norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility)
