@@ -1,3 +1,4 @@
+"""Tool to generate pawn string from a simc reforge file."""
 from io import StringIO
 import argparse
 from scipy import stats
@@ -24,56 +25,63 @@ def arg_parser():
     args = parser.parse_args()
 
 
-def data_parser(csv_path):
-    parsed_input = urlparse(args.csvfile)
-    if (parsed_input.scheme == 'http' or parsed_input.scheme == 'https'):
-        csv_object = requests.get(args.csvfile).content.decode('utf-8')
-    else:
-        with open(args.csvfile, 'r') as content_file:
-            csv_object = content_file.read()
-    return csv_object
+class DataList():
+    def __init__(self, csv_path):
+        # Read data to string
+        parsed_input = urlparse(csv_path)
+        if parsed_input.scheme == 'http' or parsed_input.scheme == 'https':
+            self.csv_string = requests.get(args.csvfile).content.decode('utf-8')
+        else:
+            with open(args.csvfile, 'r') as content_file:
+                self.csv_string = content_file.read()
 
+    def regex(self):
+        # If the first line is not removed pandas can't import due to BS header
+        self.csv_string = '\n'.join(self.csv_string.split('\n')[1:])
+        # Regex operations to remove skew in the dataframe
+        self.csv_string = self.csv_string.replace(' ', '')
+        self.csv_string = self.csv_string.replace('DPS-Error', 'Error,')
 
-def re_load(csv_input):
-    # If the first line is not removed pandas can't import due to BS header
-    csv_object = csv_input
-    csv_object = '\n'.join(csv_object.split('\n')[0:])
-    # Regex operations to remove skew in the dataframe
-    csv_object = csv_object.replace(' ', '')
-    csv_object = csv_object.replace('DPS-Error', 'Error,')
-    # Removes empty columns
-    csv_object = pd.read_csv(StringIO(csv_object))
-    csv_object = csv_object.dropna(axis=1, how='all')
-    return csv_object
+    def load_frame(self):
+        self.data_frame = pd.read_csv(StringIO(self.csv_string))
 
+    def drop_nan(self):
+        self.data_frame = self.data_frame.dropna(axis=1, how='all')
 
-def regress_normalize(fixed_frame):
-    slope_main, _, _, _, _ = stats.linregress(fixed_frame[args.mainstat], fixed_frame['DPS'])
-    slope_crit, _, _, _, _ = stats.linregress(fixed_frame['crit_rating'], fixed_frame['DPS'])
-    slope_haste, _, _, _, _ = stats.linregress(fixed_frame['haste_rating'], fixed_frame['DPS'])
-    slope_mastery, _, _, _, _ = stats.linregress(fixed_frame['mastery_rating'], fixed_frame['DPS'])
-    slope_versatility, _, _, _, _ = stats.linregress(fixed_frame['versatility_rating'], fixed_frame['DPS'])
-    regression_list = [slope_main, slope_crit, slope_haste, slope_mastery, slope_versatility]
-    norm_main = np.interp(slope_main, [min(regression_list), max(regression_list)], [1, 2])
-    norm_crit = np.interp(slope_crit, [min(regression_list), max(regression_list)], [1, 2])
-    norm_haste = np.interp(slope_haste, [min(regression_list), max(regression_list)], [1, 2])
-    norm_mastery = np.interp(slope_mastery, [min(regression_list), max(regression_list)], [1, 2])
-    norm_versatility = np.interp(slope_versatility, [min(regression_list), max(regression_list)], [1, 2])
-    return norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility
+    def regress(self):
+        self.slope_main, _, _, _, _ = stats.linregress(self.data_frame[args.mainstat], self.data_frame['DPS'])
+        self.slope_crit, _, _, _, _ = stats.linregress(self.data_frame['crit_rating'], self.data_frame['DPS'])
+        self.slope_haste, _, _, _, _ = stats.linregress(self.data_frame['haste_rating'], self.data_frame['DPS'])
+        self.slope_mastery, _, _, _, _ = stats.linregress(self.data_frame['mastery_rating'], self.data_frame['DPS'])
+        self.slope_versatility, _, _, _, _ = stats.linregress(self.data_frame['versatility_rating'],
+                                                              self.data_frame['DPS'])
+        self.regression_list = [self.slope_main, self.slope_crit, self.slope_haste, self.slope_mastery,
+                                self.slope_versatility]
 
+    def normalize(self):
+        self.norm_main = np.interp(self.slope_main, [min(self.regression_list), max(self.regression_list)], [1, 2])
+        self.norm_crit = np.interp(self.slope_crit, [min(self.regression_list), max(self.regression_list)], [1, 2])
+        self.norm_haste = np.interp(self.slope_haste, [min(self.regression_list), max(self.regression_list)], [1, 2])
+        self.norm_mastery = np.interp(self.slope_mastery, [min(self.regression_list), max(self.regression_list)],
+                                      [1, 2])
+        self.norm_versatility = np.interp(self.slope_versatility,
+                                          [min(self.regression_list), max(self.regression_list)], [1, 2])
 
-def print_pawn(norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility):
-        print("( Pawn: v1: \"{}\": Class={}, Spec={}, {}={}, CritRating={}, HasteRating={}, MasteryRating={}, Versatility={} )".format(
-            args.character_name, args.character_class, args.spec, (args.mainstat).title(), norm_main, norm_crit,
-            norm_haste, norm_mastery, norm_versatility))
+    def print_pawn(self):
+        print(
+            "( Pawn: v1: \"{}\": Class={}, Spec={}, {}={}, CritRating={},"
+            " HasteRating={}, MasteryRating={}, Versatility={} )".format(
+                args.character_name, args.character_class, args.spec, args.mainstat.title(), self.norm_main,
+                self.norm_crit,
+                self.norm_haste, self.norm_mastery, self.norm_versatility))
 
 
 if __name__ == '__main__':
     arg_parser()
-    #Read file data to string
-    csv_object = data_parser(args.csvfile)
-    #Apply regex to string and load into dataframe
-    csv_object = re_load(csv_object)
-    #Apply linear regression and interpolation to the 1,2 range
-    norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility = regress_normalize(csv_object)
-    print_pawn(norm_crit, norm_haste, norm_main, norm_mastery, norm_versatility)
+    data_list = DataList(args.csvfile)
+    data_list.regex()
+    data_list.load_frame()
+    data_list.drop_nan()
+    data_list.regress()
+    data_list.normalize()
+    data_list.print_pawn()
