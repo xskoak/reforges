@@ -4,7 +4,10 @@ Chromium-linux, 61
 142 ± 1.8 Speedometer
 222.87 ± 2.9846 JetStream
 Windows
-210.74 JetStream ± 8.0369
-140 ± 2.0 Speedometer
+30.56 ±1.73ms ARES-6 Low is better
 268.77 ±0.77% Motionmark
-30.56 ±1.73ms ARES-6
+140 ± 2.0 Speedometer
+210.74 JetStream ± 8.0369
+
+
+
